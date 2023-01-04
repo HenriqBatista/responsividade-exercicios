@@ -1,19 +1,135 @@
 * {
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     font-family: sans-serif;
     color: white;
   }
-  
+  /* 1. O primeiro layout é para telas de 1200px ou mais de largura; */
+
+  @media screen and (min-width:1200px){
+  .container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 10px ;
+    margin-left: 5px;
+    
+  }
+
   #item-1 {
     background-color: steelblue;
+    display: grid;
+    grid-column: 2/3;
+    grid-row: 1;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
   }
   
   #item-2 {
     background-color: #fe7e02;
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 1;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
   }
   
-  #item-3 {
+  #item-3 { 
     background-color: #45525b;
+    display: grid;
+    grid-column: 3/4;
+    grid-row: 1;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+}
+  
+  /* Dessa vez, os temas serão os mesmos em todos os exercícios: media-queries, unidades de medida, e breakpoints. Os exercícios de hoje tem como entregável uma página que possui 3 layouts diferentes, a depender da largura da tela.
+2. O segundo para telas entre 1200px e 800px de largura (considere 1000 como um ponto de quebra possível);*/
+
+@media screen and (min-width:800px) and (max-width:1199px){
+  .container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px 10px;
+    margin-left: 5px;
+  }
+  #item-1 {
+    background-color: steelblue;
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
   }
   
+  #item-2 {
+    background-color: #fe7e02;
+    display: grid;
+    grid-column: 1/4;
+    grid-row: 5/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+  
+  #item-3 { 
+    background-color: #45525b;
+    display: grid;
+    grid-column: 3/3;
+    grid-row: 1/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+}
+
+/* 3. O terceiro para telas de 800px ou menos. */
+@media screen and (max-width:799px){
+  .container{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px 10px;
+    margin-left: 5px;
+    
+  }
+  #item-1 {
+    background-color: steelblue;
+    display: grid;
+    grid-column: 1/3;
+    grid-row: 1/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+  
+  #item-2 {
+    background-color: #fe7e02;
+    display: grid;
+    grid-column: 1/2;
+    grid-row: 5/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+  
+  #item-3 { 
+    background-color: #45525b;
+    display: grid;
+    grid-column: 2/2;
+    grid-row: 5/5;
+    justify-items: center;
+    align-items: center;
+    border-radius: 3%;
+  }
+}
